@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\ProductMiddleware;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -47,6 +49,25 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            "title" => "required",
+            "description" => "required",
+            "thumbnail" => "required",
+            "price" => "required"
+        ]);
+
+        $product = new Product();
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->thumbnail = $request->thumbnail;
+        $product->price = $request->price;
+
+        $result = $product->save();
+
+
+        if ($result !== 0) {
+            return redirect("/admin/product");
+        }
     }
 
     /**
