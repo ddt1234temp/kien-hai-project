@@ -63,7 +63,9 @@
 
                                 <a href=" {{url("/profile")}} " class="dropdown-item">Tài khoản</a>
 
-                                <a href=" {{route("products.index")}} ">Trang quản lý</a>
+                                @if (Auth::user()->role === 1)
+                                <a href=" {{url("/admin/product")}}" class="dropdown-item">Trang quản lý</a>
+                                @endif
 
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

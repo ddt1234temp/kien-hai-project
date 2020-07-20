@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string("title");
             $table->mediumText("description");
             $table->float("price");
+            $table->string("thumbnail");
             $table->timestamps();
         });
     }

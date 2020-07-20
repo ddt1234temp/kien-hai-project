@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware("auth");
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,19 +22,20 @@ class ProductController extends Controller
 
         $products = DB::table("products")->paginate(10);
 
-        return view("admin.index")->with([
+        return view("admin.product.index")->with([
             "products" => $products
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     *s
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
         //
+        return view("admin.product.create");
     }
 
     /**
@@ -64,6 +69,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
+        return view("admin.product.edit");
     }
 
     /**
