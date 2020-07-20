@@ -41,19 +41,17 @@
     @foreach ($products as $product)
     <div class="col-lg-3 col-md-4 col-12">
       <div class="card" style="width: 100%">
-        <img class="card-img-top" style="width: 100%; height: 150px; object-fit: cover"
-          src="https://scdn.thitruongsi.com/image/cached/size/w800-h0/img/product/2019/10/24/d87c08e0-f5f9-11e9-a482-29c868776832.jpg"
+        <img class="card-img-top" style="width: 100%; height: 150px; object-fit: cover" src="{{$product->thumbnail}}"
           alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <h5 class="card-title">{{$product->title}}</h5>
+          <p class="card-text">{{$product->description}}</p>
           <a href="#" class="btn btn-danger">Mua ngay</a>
           <a href="#" class="btn btn-primary">Thêm giỏ hàng</a>
         </div>
       </div>
-      @endforeach
     </div>
+    @endforeach
 
     <div class="pagi">
       {{$products->links()}}
