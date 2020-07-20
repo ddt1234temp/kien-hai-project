@@ -90,7 +90,11 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
-        return view("admin.product.edit");
+        $product = Product::findOrFail($id);
+
+        return view("admin.product.edit")->with([
+            "product" => $product
+        ]);
     }
 
     /**
@@ -103,6 +107,26 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            "title" => "required",
+            "description" => "required",
+            "thumbnail" => "required",
+            "price" => "required"
+        ]);
+
+        $product = Product::findOrFail($id);
+
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->thumbnail = $request->thumbnail;
+        $product->price = $request->price;
+
+        $result = $product->save();
+
+
+        if ($result !== 0) {
+            return redirect("/admin/product");
+        }
     }
 
     /**
@@ -114,5 +138,10 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+        $product = Product::findOrFail($id);
+
+        $product->delete();
+
+        return redirect("/admin/product");
     }
 }

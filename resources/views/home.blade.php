@@ -44,10 +44,10 @@
         <img class="card-img-top" style="width: 100%; height: 150px; object-fit: cover" src="{{$product->thumbnail}}"
           alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{$product->title}}</h5>
+          <h5 class="card-title"><a href="#">{{$product->title}}</a></h5>
           <p class="card-text">{{$product->description}}</p>
-          <a href="#" class="btn btn-danger">Mua ngay</a>
-          <a href="#" class="btn btn-primary">Thêm giỏ hàng</a>
+          <a href="#" class="btn btn-danger p-1">Mua ngay</a>
+          <a href="#" class="btn btn-primary p-1">Thêm giỏ hàng</a>
         </div>
       </div>
     </div>
