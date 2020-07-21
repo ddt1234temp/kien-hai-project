@@ -17,5 +17,8 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get("/profile", "HomeController@profile");
+Route::post("/profile/{id}", "HomeController@profileUpdate");
+
+Route::get("/profileEdit", "HomeController@profileEdit");
 
 Route::resource("/admin/product", "ProductController");
