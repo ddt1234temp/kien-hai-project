@@ -2,7 +2,7 @@
 
 @section('content')
    <div class="container">
-        <div class="jumbotron">
+        <div class="jumbotron bg-light">
             <h1 class="display-5">Xin chào, {{Auth::user()->name}}!</h1>
             <p class="lead">Xin chào người dùng tài khoản {{Auth::user()->name}} </p>
             <hr class="my-4">
