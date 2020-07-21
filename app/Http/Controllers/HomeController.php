@@ -34,6 +34,6 @@ class HomeController extends Controller
 
     public function profile()
     {
-        return "profile";
+        return view("pages.profile");
     }
 }
