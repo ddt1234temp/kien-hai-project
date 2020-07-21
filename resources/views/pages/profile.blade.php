@@ -6,7 +6,6 @@
             <h1 class="display-5">Xin chào, {{Auth::user()->name}}!</h1>
             <p class="lead">Xin chào người dùng tài khoản {{Auth::user()->name}} </p>
             <hr class="my-4">
-            {{-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> --}}
 
             <form action="#" method="POST">
                 <div class="form-group">
