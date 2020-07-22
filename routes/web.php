@@ -18,7 +18,11 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get("/profile", "HomeController@profile");
 Route::post("/profile/{id}", "HomeController@profileUpdate");
-
 Route::get("/profileEdit", "HomeController@profileEdit");
+
+Route::get("/product/{id}", "HomeController@productShow");
+Route::post("/addtocart/{id}", "HomeController@addToCart");
+Route::get("/cart", "HomeController@cart");
+Route::post("/clearcart/{userId}", "HomeController@clearCart");
 
 Route::resource("/admin/product", "ProductController");

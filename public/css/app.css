@@ -10937,3 +10937,36 @@ body {
   margin: 0;
 }
 
+.watch-panel {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.watch-panel .watch-panel-image {
+  width: 100px;
+}
+
+.watch-panel .watch-panel-image img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.watch-panel .watch-panel-content .watch-panel-title {
+  font-size: 22px;
+}
+
+.watch-panel .watch-panel-content .watch-panel-price b {
+  color: #ff0000;
+}
+
+.watch-panel .watch-panel-content .watch-panel-favorite {
+  background-color: #3071a9;
+  padding: 2px 7px;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+}
+

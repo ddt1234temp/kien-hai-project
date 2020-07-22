@@ -38,16 +38,21 @@
 
   {{-- Home --}}
   <div class="row mt-4">
+    @if (Session::has("success"))
+    <div class="alert alert-success col-12">
+      {{Session::get("success")}}
+    </div>
+    @endif
     @foreach ($products as $product)
-    <div class="col-lg-3 col-md-4 col-12">
+    <div class="col-lg-3 col-md-4 col-12 my-2">
       <div class="card" style="width: 100%">
         <img class="card-img-top" style="width: 100%; height: 150px; object-fit: cover" src="{{$product->thumbnail}}"
           alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title"><a href="#">{{$product->title}}</a></h5>
+          <h5 class="card-title"><a href="{{url("/product/$product->id")}}">{{$product->title}}</a></h5>
+          <p> <b>Giá: </b> <span class="price text-danger">{{$product->price}}VNĐ</span></p>
           <p class="card-text">{{$product->description}}</p>
-          <a href="#" class="btn btn-danger p-1">Mua ngay</a>
-          <a href="#" class="btn btn-primary p-1">Thêm giỏ hàng</a>
+        <a class="btn btn-primary" href="{{url("/product/$product->id")}}">Chi tiết đặt hàng</a>
         </div>
       </div>
     </div>

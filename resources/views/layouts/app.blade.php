@@ -37,7 +37,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li><a href="/cart">Xem giỏ hàng</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -87,6 +87,8 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        @include('layouts.footer')
     </div>
 </body>
 

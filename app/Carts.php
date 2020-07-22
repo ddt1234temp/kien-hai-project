@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class stores extends Model
+class Carts extends Model
 {
     //
+    protected $table = "carts";
 }
