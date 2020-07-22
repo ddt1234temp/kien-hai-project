@@ -21,8 +21,8 @@ Route::post("/profile/{id}", "HomeController@profileUpdate");
 Route::get("/profileEdit", "HomeController@profileEdit");
 
 Route::get("/product/{id}", "HomeController@productShow");
-Route::post("/addtocart/{id}", "HomeController@addToCart");
-Route::get("/cart", "HomeController@cart");
-Route::post("/clearcart/{userId}", "HomeController@clearCart");
+Route::post("/addtocart/{id}", "HomeController@addToCart")->middleware("auth");
+Route::get("/cart", "HomeController@cart")->middleware("auth");
+Route::post("/clearcart/{userId}", "HomeController@clearCart")->middleware("auth");
 
 Route::resource("/admin/product", "ProductController");

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Carts;
 use App\Product;
 use App\User;
+use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
