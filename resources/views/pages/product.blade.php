@@ -32,8 +32,10 @@
             </div>
 
             <div class="d-flex mt-3">
-                <a href="#" class="btn btn-primary">Mua ngay</a>
-                <a href="#" onclick="addToCart()" class="btn btn-danger ml-2">Thêm vào giỏ hàng</a>
+                @if (Session::has("success"))
+                    <a href="/cart" class="btn btn-primary mr-2">Thanh toán</a>
+                @endif
+                <a href="#" onclick="addToCart()" class="btn btn-danger">Thêm vào giỏ hàng</a>
                 <form id="addtocart-js" action="{{url("/addtocart", $product->id)}}" method="POST">
                     @csrf
                     <input type="text" style="display: none" name="from" value="{{Request::path()}}">
