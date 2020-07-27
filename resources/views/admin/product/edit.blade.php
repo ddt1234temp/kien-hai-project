@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h3 class="text-center">Tạo sản phẩm mới cho shop</h3>
+    <h3 class="text-center">Sửa sản phẩm mới cho shop</h3>
     <form action="{{route("product.update", $product->id ?? "")}}" method="POST">
         @csrf
         @method("PUT")

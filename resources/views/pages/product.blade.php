@@ -35,7 +35,7 @@
                 @if (Session::has("success"))
                     <a href="/cart" class="btn btn-primary mr-2">Thanh toán</a>
                 @endif
-                <a href="#" onclick="addToCart()" class="btn btn-danger">Thêm vào giỏ hàng</a>
+                <a href="javascript:void(0)" onclick="addToCart()" class="btn btn-danger">Thêm vào giỏ hàng</a>
                 <form id="addtocart-js" action="{{url("/addtocart", $product->id)}}" method="POST">
                     @csrf
                     <input type="text" style="display: none" name="from" value="{{Request::path()}}">
